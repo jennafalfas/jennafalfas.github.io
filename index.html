@@ -4,7 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jenna Falfas</title>
-<meta name="description" content="Jenna Falfas. New home marketing, Atlanta. Marketing Manager at Taylor Morrison.">
+<meta name="description" content="Jenna Falfas. New home marketing in Atlanta. Marketing Manager at Taylor Morrison.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Jenna Falfas">
+<meta property="og:description" content="New home marketing in Atlanta. Campaigns, communities, and grand openings that turn floor plans into first days.">
+<meta property="og:site_name" content="Jenna Falfas">
+<meta property="og:url" content="https://jennafalfas.github.io/">
+<meta property="og:image" content="https://jennafalfas.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jenna Falfas. New home marketing, Atlanta.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jennafalfas.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,560&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,12 +25,10 @@
     --paper:#faf7f2; --ink:#1c1917; --clay:#b4552d; --stone:#8a8177; --line:#e5dfd5;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%}
   body{
     background:var(--paper); color:var(--ink);
     font-family:'Inter',system-ui,sans-serif;
-    display:flex; flex-direction:column;
-    height:100vh; overflow:hidden;
+    min-height:100svh; display:flex; flex-direction:column;
   }
   header{
     display:flex; justify-content:space-between; align-items:center;
@@ -32,7 +42,7 @@
   nav a:hover{color:var(--clay)}
   main{
     flex:1; display:flex; flex-direction:column; justify-content:center;
-    padding:0 3rem; max-width:1200px; width:100%; margin:0 auto;
+    padding:2.5rem 3rem; max-width:1200px; width:100%; margin:0 auto;
   }
   .kicker{
     color:var(--clay); font-size:.8rem; font-weight:600;
@@ -46,7 +56,7 @@
   h1 em{font-style:normal; color:var(--clay)}
   .sub{
     margin-top:1.4rem; color:var(--stone);
-    font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.6; max-width:52ch;
+    font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.6; max-width:60ch;
   }
   .sub span{display:block}
   .cta{margin-top:2.2rem; display:flex; gap:1rem; align-items:center}
@@ -96,5 +106,29 @@
   <div class="fact"><b>Where</b>Atlanta, Georgia</div>
   <div class="fact"><b>Heart</b>Community first, on and off the clock</div>
 </footer>
+<script>
+/* one-screen fitter (fleet rule: ONE-SCREEN.md). A one-page opening renders
+   with zero scroll on desktop. If content runs a little over, the page scales
+   itself; far over is a content problem, split it into tabs instead. */
+(function () {
+  var MAX = 1.45, MIN_W = 900;
+  function fit() {
+    var b = document.body, d = document.documentElement;
+    b.style.zoom = "";
+    if (window.innerWidth < MIN_W) return;
+    var over = d.scrollHeight / window.innerHeight;
+    if (d.scrollHeight <= window.innerHeight || over > MAX) return;
+    var z = 1;
+    for (var i = 0; i < 4 && d.scrollHeight > window.innerHeight; i++) {
+      z *= window.innerHeight / d.scrollHeight;
+      b.style.zoom = z;
+    }
+  }
+  addEventListener("resize", fit);
+  addEventListener("load", fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  fit();
+})();
+</script>
 </body>
 </html>
