@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jenna Falfas</title>
+<meta name="description" content="Jenna Falfas. New home marketing, Atlanta. Marketing Manager at Taylor Morrison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,560&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf7f2; --ink:#1c1917; --clay:#b4552d; --stone:#8a8177; --line:#e5dfd5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    display:flex; flex-direction:column;
+    height:100vh; overflow:hidden;
+  }
+  header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.4rem 3rem; border-bottom:1px solid var(--line);
+  }
+  .mark{font-family:'Fraunces',serif; font-size:1.05rem; letter-spacing:.02em}
+  nav a{
+    color:var(--stone); text-decoration:none; font-size:.85rem; font-weight:500;
+    margin-left:1.8rem; transition:color .2s;
+  }
+  nav a:hover{color:var(--clay)}
+  main{
+    flex:1; display:flex; flex-direction:column; justify-content:center;
+    padding:0 3rem; max-width:1200px; width:100%; margin:0 auto;
+  }
+  .kicker{
+    color:var(--clay); font-size:.8rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; margin-bottom:1.2rem;
+  }
+  h1{
+    font-family:'Fraunces',serif; font-weight:340;
+    font-size:clamp(2.6rem,6.2vw,4.6rem); line-height:1.08;
+    max-width:17ch;
+  }
+  h1 em{font-style:normal; color:var(--clay)}
+  .sub{
+    margin-top:1.4rem; color:var(--stone);
+    font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.6; max-width:52ch;
+  }
+  .sub span{display:block}
+  .cta{margin-top:2.2rem; display:flex; gap:1rem; align-items:center}
+  .btn{
+    background:var(--ink); color:var(--paper); text-decoration:none;
+    padding:.85rem 1.7rem; border-radius:999px; font-size:.9rem; font-weight:500;
+    transition:background .2s;
+  }
+  .btn:hover{background:var(--clay)}
+  .quiet{color:var(--stone); text-decoration:none; font-size:.9rem; font-weight:500}
+  .quiet:hover{color:var(--ink)}
+  footer{
+    border-top:1px solid var(--line);
+    padding:1.2rem 3rem;
+    display:flex; justify-content:space-between; gap:2rem;
+  }
+  .fact{font-size:.82rem; color:var(--stone); line-height:1.5}
+  .fact b{display:block; color:var(--ink); font-weight:600; font-size:.86rem}
+  @media(max-width:640px){
+    header,footer,main{padding-left:1.4rem;padding-right:1.4rem}
+    footer{flex-wrap:wrap; gap:1rem}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="mark">Jenna Falfas</div>
+  <nav>
+    <a href="https://www.linkedin.com/in/jenna-falfas-372515150/">LinkedIn</a>
+    <a href="mailto:falfasjenna@gmail.com">Contact</a>
+  </nav>
+</header>
+<main>
+  <div class="kicker">New Home Marketing &middot; Atlanta</div>
+  <h1>Homes sell when the story feels like <em>home.</em></h1>
+  <p class="sub">
+    <span>I market new home communities for one of the largest builders in America.</span>
+    <span>Campaigns, communities, and grand openings that turn floor plans into first days.</span>
+  </p>
+  <div class="cta">
+    <a class="btn" href="https://www.linkedin.com/in/jenna-falfas-372515150/">Connect with me</a>
+    <a class="quiet" href="mailto:falfasjenna@gmail.com">or say hello</a>
+  </div>
+</main>
+<footer>
+  <div class="fact"><b>Now</b>Marketing Manager, Taylor Morrison</div>
+  <div class="fact"><b>Where</b>Atlanta, Georgia</div>
+  <div class="fact"><b>Heart</b>Community first, on and off the clock</div>
+</footer>
+</body>
+</html>
