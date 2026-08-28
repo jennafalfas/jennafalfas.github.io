@@ -19,11 +19,10 @@
 <meta name="twitter:image" content="https://jennafalfas.github.io/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,500;1,9..144,340&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,500;1,9..144,340;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#faf7f2; --ink:#1c1917; --clay:#b4552d; --stone:#8a8177; --line:#e5dfd5;
-    --dusk1:#171226; --dusk2:#3b1f33; --ember:#c96a3b; --glowc:#ffcf8a;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
@@ -35,7 +34,7 @@
   }
   header{
     display:flex; justify-content:space-between; align-items:center;
-    padding:1.3rem 3rem;
+    padding:1.4rem 3rem;
   }
   .mark{font-family:'Fraunces',serif; font-size:1.05rem; letter-spacing:.02em}
   .mark b{color:var(--clay); font-weight:500}
@@ -51,79 +50,70 @@
   nav a:hover{color:var(--ink)}
   nav a:hover::after{transform:scaleX(1); transform-origin:left}
   main{
-    flex:1; display:flex; flex-direction:column; align-items:center;
-    padding:1.6rem 3rem 0; width:100%; max-width:1280px; margin:0 auto;
+    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:1rem 3rem 2rem; width:100%; max-width:1280px; margin:0 auto;
     text-align:center; min-height:0;
   }
   .kicker{
     color:var(--clay); font-size:.76rem; font-weight:600;
-    letter-spacing:.26em; text-transform:uppercase; margin-bottom:1.1rem;
+    letter-spacing:.26em; text-transform:uppercase; margin-bottom:1.6rem;
   }
   h1{
     font-family:'Fraunces',serif; font-weight:340;
-    font-size:60px; line-height:1.1; letter-spacing:-.01em;
+    font-size:76px; line-height:1.06; letter-spacing:-.012em;
     white-space:nowrap; width:100%; max-width:100%;
   }
   h1 em{font-style:italic; color:var(--clay)}
   .sub{
-    margin-top:1rem; color:var(--stone);
-    font-size:clamp(.95rem,1.3vw,1.12rem); line-height:1.6;
+    margin-top:1.5rem; color:var(--stone);
+    font-size:clamp(1rem,1.35vw,1.16rem); line-height:1.7;
   }
   .sub span{display:block}
   .sub b{color:var(--ink); font-weight:500}
-  .cta{margin-top:1.5rem; display:flex; gap:1.1rem; align-items:center; justify-content:center}
+  .cta{margin-top:2.2rem; display:flex; gap:1.1rem; align-items:center; justify-content:center}
   .btn{
     background:var(--ink); color:var(--paper); text-decoration:none;
-    padding:.85rem 1.7rem; border-radius:999px; font-size:.9rem; font-weight:500;
+    padding:.9rem 1.8rem; border-radius:999px; font-size:.9rem; font-weight:500;
     display:inline-flex; align-items:center; gap:.5rem;
     transition:background .25s, transform .25s, box-shadow .25s;
   }
   .btn svg{transition:transform .25s}
-  .btn:hover{background:var(--clay); transform:translateY(-1px); box-shadow:0 8px 24px rgba(180,85,45,.25)}
+  .btn:hover{background:var(--clay); transform:translateY(-1px); box-shadow:0 8px 24px rgba(180,85,45,.22)}
   .btn:hover svg{transform:translateX(3px)}
   .quiet{color:var(--stone); text-decoration:none; font-size:.9rem; font-weight:500; border-bottom:1px solid var(--line); padding-bottom:2px; transition:color .25s, border-color .25s}
   .quiet:hover{color:var(--clay); border-color:var(--clay)}
-  /* the product: a community at dusk, floating over the ground */
-  .board{
-    margin-top:1.9rem; width:min(1060px,100%); flex:1; min-height:200px;
-    border-radius:22px 22px 0 0; position:relative; overflow:hidden;
-    background:linear-gradient(180deg,var(--dusk1) 0%,var(--dusk2) 55%,#6e3327 88%,var(--ember) 100%);
-    box-shadow:0 30px 80px -20px rgba(28,25,23,.45);
+  .craft{
+    margin-top:3.4rem; display:flex; justify-content:center; gap:0;
+    width:min(880px,100%);
   }
-  .board .glow{
-    position:absolute; left:50%; bottom:-16%; width:70%; height:60%;
-    transform:translateX(-50%);
-    background:radial-gradient(ellipse at center bottom, rgba(255,178,110,.55), transparent 65%);
+  .craft div{
+    flex:1; padding:0 2.4rem; text-align:center;
   }
-  .board svg{position:absolute; inset:0; width:100%; height:100%}
-  .board .cap{
-    position:absolute; top:1.15rem; left:50%; transform:translateX(-50%);
-    color:rgba(250,247,242,.85); font-size:.72rem; font-weight:500;
-    letter-spacing:.24em; text-transform:uppercase; white-space:nowrap;
+  .craft div + div{border-left:1px solid var(--line)}
+  .craft h2{
+    font-family:'Fraunces',serif; font-weight:500; font-style:italic;
+    font-size:1.25rem; color:var(--ink); margin-bottom:.45rem;
   }
-  .star{fill:#fff; opacity:.5; animation:tw 3.4s ease-in-out infinite}
-  .star:nth-of-type(2n){animation-delay:1.2s} .star:nth-of-type(3n){animation-delay:2.1s}
-  @keyframes tw{0%,100%{opacity:.15}50%{opacity:.6}}
-  .win{fill:var(--glowc); opacity:0}
-  @media (prefers-reduced-motion: no-preference){
-    .rise{opacity:0; transform:translateY(16px); animation:rise .7s cubic-bezier(.2,.6,.2,1) forwards}
-    .r2{animation-delay:.08s}.r3{animation-delay:.16s}.r4{animation-delay:.24s}.r5{animation-delay:.3s}
-    @keyframes rise{to{opacity:1; transform:none}}
-    .win{animation:on 1.1s ease forwards}
-    @keyframes on{to{opacity:.95}}
-  }
-  @media (prefers-reduced-motion: reduce){ .win{opacity:.95} }
+  .craft p{font-size:.86rem; color:var(--stone); line-height:1.6}
   footer{
     border-top:1px solid var(--line);
-    padding:1.15rem 3rem;
+    padding:1.2rem 3rem;
     display:flex; justify-content:center; gap:4rem;
     background:var(--paper); text-align:center;
   }
   .fact{font-size:.82rem; color:var(--stone); line-height:1.55}
   .fact b{display:block; color:var(--ink); font-weight:600; font-size:.86rem}
+  @media (prefers-reduced-motion: no-preference){
+    .rise{opacity:0; transform:translateY(14px); animation:rise .8s cubic-bezier(.2,.6,.2,1) forwards}
+    .r2{animation-delay:.07s}.r3{animation-delay:.14s}.r4{animation-delay:.21s}.r5{animation-delay:.28s}
+    @keyframes rise{to{opacity:1; transform:none}}
+  }
+  @media(max-width:820px){
+    .craft{flex-direction:column; gap:1.6rem}
+    .craft div + div{border-left:none; padding-top:1.6rem; border-top:1px solid var(--line)}
+  }
   @media(max-width:640px){
-    header,footer{padding-left:1.4rem;padding-right:1.4rem}
-    main{padding-left:1.4rem;padding-right:1.4rem}
+    header,footer,main{padding-left:1.4rem;padding-right:1.4rem}
     footer{gap:1.4rem; flex-wrap:wrap}
   }
 </style>
@@ -149,45 +139,19 @@
     </a>
     <a class="quiet" href="mailto:falfasjenna@gmail.com">or say hello</a>
   </div>
-  <div class="board rise r5" aria-label="A neighborhood at dusk, windows lighting up one by one">
-    <div class="glow"></div>
-    <svg viewBox="0 0 1060 340" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <circle class="star" cx="120" cy="52" r="1.6"/><circle class="star" cx="300" cy="34" r="1.2"/>
-      <circle class="star" cx="480" cy="60" r="1.5"/><circle class="star" cx="660" cy="30" r="1.2"/>
-      <circle class="star" cx="840" cy="55" r="1.6"/><circle class="star" cx="960" cy="80" r="1.2"/>
-      <circle class="star" cx="210" cy="95" r="1.1"/><circle class="star" cx="740" cy="90" r="1.4"/>
-      <!-- back ridge of rooftops -->
-      <path d="M0 340 V262 L60 262 L110 214 L160 262 L235 262 L285 222 L335 262 L420 262 L470 210 L520 262 L610 262 L655 226 L700 262 L790 262 L840 216 L890 262 L980 262 L1020 234 L1060 262 V340 Z"
-        fill="#241a30" opacity=".9"/>
-      <!-- front houses -->
-      <g fill="#120d1c">
-        <path d="M40 340 V270 L130 200 L220 270 V340 Z"/>
-        <path d="M260 340 V282 L330 226 L400 282 V340 Z"/>
-        <path d="M440 340 V258 L560 170 L680 258 V340 Z"/>
-        <path d="M720 340 V282 L790 226 L860 282 V340 Z"/>
-        <path d="M900 340 V270 L985 202 L1060 262 V340 Z"/>
-      </g>
-      <!-- chimneys -->
-      <rect x="180" y="212" width="14" height="34" fill="#120d1c"/>
-      <rect x="620" y="196" width="16" height="42" fill="#120d1c"/>
-      <!-- windows, lighting one by one -->
-      <g>
-        <rect class="win" style="animation-delay:.6s"  x="88"  y="284" width="20" height="26" rx="2"/>
-        <rect class="win" style="animation-delay:2.1s" x="150" y="284" width="20" height="26" rx="2"/>
-        <rect class="win" style="animation-delay:1.2s" x="308" y="292" width="17" height="22" rx="2"/>
-        <rect class="win" style="animation-delay:2.8s" x="352" y="292" width="17" height="22" rx="2"/>
-        <rect class="win" style="animation-delay:.9s"  x="500" y="272" width="22" height="30" rx="2"/>
-        <rect class="win" style="animation-delay:1.8s" x="548" y="272" width="22" height="30" rx="2"/>
-        <rect class="win" style="animation-delay:3.4s" x="596" y="272" width="22" height="30" rx="2"/>
-        <rect class="win" style="animation-delay:2.4s" x="768" y="292" width="17" height="22" rx="2"/>
-        <rect class="win" style="animation-delay:1.5s" x="812" y="292" width="17" height="22" rx="2"/>
-        <rect class="win" style="animation-delay:3.1s" x="948" y="284" width="20" height="26" rx="2"/>
-        <rect class="win" style="animation-delay:3.8s" x="1002" y="284" width="20" height="26" rx="2"/>
-        <!-- doors with porch light -->
-        <rect class="win" style="animation-delay:4.2s" x="546" y="308" width="26" height="32" rx="3" opacity="0"/>
-      </g>
-    </svg>
-    <div class="cap">Floor plans into first days</div>
+  <div class="craft rise r5">
+    <div>
+      <h2>Campaigns</h2>
+      <p>The message, the media, and the moment a community becomes a name people know.</p>
+    </div>
+    <div>
+      <h2>Communities</h2>
+      <p>Positioning new neighborhoods so the right family finds the right street.</p>
+    </div>
+    <div>
+      <h2>Grand openings</h2>
+      <p>The day the doors open, planned to the last detail and full of people.</p>
+    </div>
   </div>
 </main>
 <footer>
@@ -199,7 +163,7 @@
 /* headline fitter (fleet rule: ZOOM HEADLINES TO FIT). A display heading is
    always ONE zooming line, newspaper style: shrink the font only as needed. */
 (function () {
-  var BASE = 60;
+  var BASE = 76;
   function fitLines() {
     document.querySelectorAll(".fitline").forEach(function (el) {
       el.style.fontSize = BASE + "px";
@@ -213,9 +177,7 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLines);
   fitLines();
 })();
-/* one-screen fitter (fleet rule: ONE-SCREEN.md). A one-page opening renders
-   with zero scroll on desktop. If content runs a little over, the page scales
-   itself; far over is a content problem, split it into tabs instead. */
+/* one-screen fitter (fleet rule: ONE-SCREEN.md). */
 (function () {
   var MAX = 1.45, MIN_W = 900;
   function fit() {
